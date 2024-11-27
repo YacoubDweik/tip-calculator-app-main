@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="container__logo">
+        <img
+          src="./images/logo.svg"
+          alt="Tip calculator logo"
+        />
+      </h1>
+      <section class="container__body">
+        <div class="inputs">
+          <div class="box">
+            <label for="bill">Bill</label>
+            <span class="bill">
+              <img src="./images/icon-dollar.svg" alt="" />
+              <input
+                type="number"
+                name="bill"
+                id="bill"
+                value="0"
+                min="0"
+              />
+            </span>
+          </div>
+          <div class="box">
+            <h2>Select Tip %</h2>
+            <div class="buttons">
+              <button value="0.05">5%</button
+              ><button value="0.10">10%</button
+              ><button value="0.15">15%</button
+              ><button value="0.25">25%</button
+              ><button value="0.50">50%</button
+              ><button>
+                <p contenteditable="false">Custom</p>
+              </button>
+            </div>
+          </div>
+          <div class="box">
+            <label for="people">Number of People</label>
+            <span class="people">
+              <img src="./images/icon-person.svg" alt="" />
+              <input
+                type="number"
+                name=""
+                id="people"
+                value="1"
+                min="1"
+              />
+            </span>
+          </div>
+        </div>
+        <div class="show">
+          <div class="values">
+            <div class="box">
+              <span class="info">
+                <h3 class="title">Tip Amount</h3>
+                <h4 class="per">/ person</h4>
+              </span>
+              <span class="total">$0.00</span>
+            </div>
+            <div class="box">
+              <span class="info">
+                <h3 class="title">Total</h3>
+                <h4 class="per">/ person</h4>
+              </span>
+              <span class="total">$0.00</span>
+            </div>
+          </div>
+          <button class="">Reset</button>
+        </div>
+      </section>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>
