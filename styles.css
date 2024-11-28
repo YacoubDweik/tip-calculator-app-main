@@ -251,7 +251,7 @@ body {
   color: var(--very-dark-cyan);
   pointer-events: auto;
   cursor: pointer;
-  pointer-events: auto;
+  pointer-events: fill;
 }
 
 .show button.active:hover {
