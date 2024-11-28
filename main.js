@@ -94,8 +94,13 @@ function handleCustom() {
 }
 
 function handleCustomInput(e) {
+  let regex = /^1000$|^\d{1,3}$|^[0-9]$/;
   customButton.classList.remove("error");
-  if (+e.target.innerHTML && +e.target.innerHTML < 1001) {
+  if (
+    +e.target.innerHTML &&
+    +e.target.innerHTML.length <= 4 &&
+    regex.test(+e.target.innerHTML)
+  ) {
     customTip = +e.target.innerHTML / 100;
     tip = bill.value * (customTip / people.value);
     showTip.innerHTML = `\$${+tip.toFixed(2) || "0.00"}`;
@@ -103,7 +108,10 @@ function handleCustomInput(e) {
     showTotal.innerHTML = `\$${
       +total.toFixed(2) || "0.00"
     }`;
-  } else if (+e.target.innerHTML > 1000) {
+  } else if (
+    +e.target.innerHTML.length > 4 ||
+    !regex.test(+e.target.innerHTML)
+  ) {
     e.target.innerHTML = "";
     customButton.classList.add("error");
     showTip.innerHTML = "$0.00";

@@ -155,6 +155,7 @@ body {
   background-color: var(--very-light-grayish-cyan);
   color: var(--grayish-cyan);
   border: 2px solid transparent;
+  overflow: hidden;
 }
 
 .buttons button:last-child p {
