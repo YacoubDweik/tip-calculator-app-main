@@ -94,11 +94,11 @@ function handleCustom() {
 }
 
 function handleCustomInput(e) {
-  let regex = /^1000$|^\d{1,3}$|^[0-9]$/;
+  let regex = /^100$|^\d{1,3}$|^[0-9]$/;
   customButton.classList.remove("error");
   if (
     +e.target.innerHTML &&
-    +e.target.innerHTML.length <= 4 &&
+    +e.target.innerHTML <= 100 &&
     regex.test(+e.target.innerHTML)
   ) {
     customTip = +e.target.innerHTML / 100;
@@ -109,7 +109,7 @@ function handleCustomInput(e) {
       +total.toFixed(2) || "0.00"
     }`;
   } else if (
-    +e.target.innerHTML.length > 4 ||
+    +e.target.innerHTML > 100 ||
     !regex.test(+e.target.innerHTML)
   ) {
     e.target.innerHTML = "";
