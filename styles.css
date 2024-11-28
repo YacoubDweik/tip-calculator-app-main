@@ -243,6 +243,7 @@ body {
   color: #0a686a;
   cursor: not-allowed;
   transition: 0.3s;
+  pointer-events: none;
 }
 
 .show button.active {
