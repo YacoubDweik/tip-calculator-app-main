@@ -50,6 +50,10 @@ function handleClick(e) {
   } else {
     customText.innerHTML = "Custom";
     customText.contentEditable = "false";
+    tip = 0;
+    showTip.innerHTML = "$0.00";
+    total = tip + +bill.value / +people.value;
+    showTotal.innerHTML = "$" + total.toFixed(2);
   }
 }
 
@@ -68,6 +72,9 @@ function handleInput() {
   } else if (activeTip) {
     tip = (+bill.value * +activeTip.value) / +people.value;
     showTip.innerHTML = "$" + tip.toFixed(2);
+    total = +tip + +bill.value / +people.value;
+    showTotal.innerHTML = "$" + total.toFixed(2);
+  } else {
     total = +tip + +bill.value / +people.value;
     showTotal.innerHTML = "$" + total.toFixed(2);
   }
@@ -99,6 +106,7 @@ function handleCustomInput(e) {
   if (
     +e.target.innerHTML &&
     +e.target.innerHTML <= 100 &&
+    +e.target.innerHTML.length <= 3 &&
     regex.test(+e.target.innerHTML)
   ) {
     customTip = +e.target.innerHTML / 100;
@@ -110,6 +118,7 @@ function handleCustomInput(e) {
     }`;
   } else if (
     +e.target.innerHTML > 100 ||
+    +e.target.innerHTML.length > 3 ||
     !regex.test(+e.target.innerHTML)
   ) {
     e.target.innerHTML = "";
