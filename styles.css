@@ -249,6 +249,7 @@ body {
 .show button.active {
   background-color: var(--strong-cyan);
   color: var(--very-dark-cyan);
+  pointer-events: auto;
   cursor: pointer;
 }
 
