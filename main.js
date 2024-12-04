@@ -17,6 +17,7 @@ let customButton = document.querySelector(
 let customText = document.querySelector(
   ".buttons button:last-child p"
 );
+let errorText = document.querySelector(".error");
 let customTip = 0;
 let tip = 0;
 let total = 0;
@@ -61,6 +62,9 @@ function handleInput() {
   if (bill.value != 0 || people.value != 1) {
     reset.classList.add("active");
   }
+  if (people.value == 0) {
+    people.value = 1;
+  }
   let activeTip =
     document.querySelector(".buttons button.active") || 0;
   if (activeTip == customButton) {
@@ -89,6 +93,7 @@ function handleReset() {
   );
   bill.value = 0;
   people.value = 1;
+  customText.innerHTML = "Custom";
   showTip.innerHTML = "$0.00";
   showTotal.innerHTML = "$0.00";
   reset.classList.remove("active");
